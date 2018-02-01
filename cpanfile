@@ -12,13 +12,13 @@ requires 'Scalar::Util', '0';
 on 'develop', sub {
     requires 'Code::TidyAll', '0';
     requires 'Perl::Tidy', '0';
-    requires 'Test2::V0', '0';
     requires 'Test::Code::TidyAll', '0.20';
     requires 'Test::Perl::Critic', '0';
-    requires 'Test::Script', '0';
     requires 'Text::Diff', '0'; # undeclared Test::Code::TidyAll plugin dependency
 };
 
 on test => sub {
+    requires 'Test2::V0', '0';
     requires 'Test::More', '0.96';
+    requires 'Test::Script', '0';
 };
