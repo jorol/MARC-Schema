@@ -10,8 +10,6 @@ use File::Share ':all';
 use File::Slurper 'read_binary';
 use Scalar::Util qw(reftype);
 
-use DDP;
-
 sub new {
     my ($class, $arg_ref) = @_;
     my $self = $arg_ref // {};
@@ -124,6 +122,15 @@ __END__
 =head1 NAME
 
 MARC::Schema - Specification of the MARC21 format
+
+=begin markdown
+
+[![Build Status](https://travis-ci.org/jorol/MARC-Schema.png)](https://travis-ci.org/jorol/MARC-Schema)
+[![Coverage Status](https://coveralls.io/repos/jorol/MARC-Schema/badge.png?branch=devel)](https://coveralls.io/r/jorol/MARC-Schema?branch=devel)
+[![Kwalitee Score](http://cpants.cpanauthors.org/dist/MARC-Schema.png)](http://cpants.cpanauthors.org/dist/MARC-Schema)
+[![CPAN version](https://badge.fury.io/pl/MARC-Schema.png)](http://badge.fury.io/pl/MARC-Schema)
+
+=end markdown
 
 =head1 SYNOPSIS
 
