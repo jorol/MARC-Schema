@@ -31,8 +31,13 @@
       },
       "develop" : {
          "requires" : {
+            "Code::TidyAll" : "0",
             "Dist::Milla" : "v1.0.17",
-            "Test::Pod" : "1.41"
+            "Perl::Tidy" : "0",
+            "Test::Code::TidyAll" : "0.20",
+            "Test::Perl::Critic" : "0",
+            "Test::Pod" : "1.41",
+            "Text::Diff" : "0"
          }
       },
       "runtime" : {
@@ -50,7 +55,9 @@
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.96"
+            "Test2::V0" : "0",
+            "Test::More" : "0.96",
+            "Test::Script" : "0"
          }
       }
    },
