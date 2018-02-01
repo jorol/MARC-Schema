@@ -2,6 +2,15 @@ Revision history for MARC-Schema
 
 {{$NEXT}}
 
+0.03  2018-02-01 19:51:54 CET
+  - add .travis.yml
+  - add Perl::Tidy and Perl::Critic 
+  - add badges
+  - add test for script
+  - fix cpanfile
+  - remove perl 5.12 from .travis.yml
+  - edit POD
+
 0.02  2018-02-01 17:51:36 CET
   - add DDP to cpanfile
 

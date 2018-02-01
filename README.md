@@ -25,7 +25,8 @@ MARC::Schema - Specification of the MARC21 format
             ],
             [ '999', undef, undef, '_', 'not a standard field']
         ]
-        };
+    };
+    
     # load default schema
     my $schema = MARC::Schema->new();
     my @check = $schema->check($record);
@@ -62,8 +63,7 @@ For a more detailed description of the (default) schema see [MARC21 structure in
 
 ## check( $record \[, %options \] )
 
-Check whether a given ["Catmandu MARC21 record"](https://metacpan.org/pod/Catmandu::Importer::MARC#EXAMPLE-ITEM) record confirms to the schema and return a
-list of detected violations. Possible options include:
+Check whether a given ["Catmandu::Importer::MARC"](https://metacpan.org/pod/Catmandu::Importer::MARC#EXAMPLE-ITEM) or ["MARC::Parser::\*"](https://metacpan.org/search?q=%22MARC%3A%3AParser%22) record confirms to the schema and return a list of detected violations. Possible options include:
 
 - ignore\_unknown\_fields
 
