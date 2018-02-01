@@ -150,7 +150,8 @@ MARC::Schema - Specification of the MARC21 format
             ],
             [ '999', undef, undef, '_', 'not a standard field']
         ]
-        };
+    };
+    
     # load default schema
     my $schema = MARC::Schema->new();
     my @check = $schema->check($record);
@@ -187,8 +188,7 @@ For a more detailed description of the (default) schema see L<MARC21 structure i
  
 =head2 check( $record [, %options ] )
  
-Check whether a given L<"Catmandu MARC21 record"|Catmandu::Importer::MARC/"EXAMPLE ITEM"> record confirms to the schema and return a
-list of detected violations. Possible options include:
+Check whether a given L<"Catmandu::Importer::MARC"|Catmandu::Importer::MARC/"EXAMPLE ITEM"> or L<"MARC::Parser::*"|https://metacpan.org/search?q=%22MARC%3A%3AParser%22> record confirms to the schema and return a list of detected violations. Possible options include:
  
 =over
  
