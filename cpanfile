@@ -10,11 +10,13 @@ requires 'MARC::Parser::XML', '0';
 requires 'Scalar::Util', '0';
 
 on 'develop', sub {
-    requires 'Code::TidyAll', 0;
-    requires 'Perl::Tidy', 0;
+    requires 'Code::TidyAll', '0';
+    requires 'Perl::Tidy', '0';
+    requires 'Test2::V0', '0';
     requires 'Test::Code::TidyAll', '0.20';
-    requires 'Text::Diff', 0; # undeclared Test::Code::TidyAll plugin dependency
-    requires 'Test::Perl::Critic';
+    requires 'Test::Perl::Critic', '0';
+    requires 'Test::Script', '0';
+    requires 'Text::Diff', '0'; # undeclared Test::Code::TidyAll plugin dependency
 };
 
 on test => sub {
