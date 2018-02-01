@@ -13,7 +13,7 @@ use Scalar::Util qw(reftype);
 use DDP;
 
 sub new {
-    my ( $class, $arg_ref ) = @_;
+    my ($class, $arg_ref) = @_;
     my $self = $arg_ref // {};
     bless $self, $class;
     $self->_initialize();
@@ -22,7 +22,7 @@ sub new {
 
 sub _initialize {
     my ($self) = shift;
-    if ( !$self->{fields} ) {
+    if (!$self->{fields}) {
         $self->{fields} = $self->_load_schema();
     }
     return;
@@ -31,29 +31,29 @@ sub _initialize {
 sub _load_schema {
     my ($self) = shift;
     my $json;
-    if ( $self->{file} ) {
-        $json = read_binary( $self->{filename} );
+    if ($self->{file}) {
+        $json = read_binary($self->{filename});
     }
     else {
-        my $filename = dist_file( 'MARC-Schema', 'marc-schema.json' );
+        my $filename = dist_file('MARC-Schema', 'marc-schema.json');
         $json = read_binary($filename);
     }
     my $schema = decode_json($json);
 
     # rename MARC leader according to the Catmandu::MARC specification
-    if ( exists $schema->{Leader} ) {
+    if (exists $schema->{Leader}) {
         $schema->{LDR} = delete $schema->{Leader};
     }
     return $schema;
 }
 
 sub check {
-    my ( $self, $record, %options ) = @_;
+    my ($self, $record, %options) = @_;
 
     $record = $record->{record} if reftype $record eq 'HASH';
 
     $options{counter} = {};
-    return map { $self->check_field( $_, %options ) } @$record;
+    return map {$self->check_field($_, %options)} @$record;
 }
 
 sub _error {
@@ -67,21 +67,21 @@ sub _error {
 }
 
 sub check_field {
-    my ( $self, $field, %options ) = @_;
+    my ($self, $field, %options) = @_;
 
-    my $spec = $self->{fields}->{ $field->[0] };
+    my $spec = $self->{fields}->{$field->[0]};
 
-    if ( !$spec ) {
-        if ( !$options{ignore_unknown_fields} ) {
-            return _error( $field, message => 'unknown field' );
+    if (!$spec) {
+        if (!$options{ignore_unknown_fields}) {
+            return _error($field, message => 'unknown field');
         }
         else {
             return ();
         }
     }
 
-    if ( $options{counter} && defined $spec->{repeatable} ) {
-        if ( $options{counter}{ $field->[0] }++ ) {
+    if ($options{counter} && defined $spec->{repeatable}) {
+        if ($options{counter}{$field->[0]}++) {
             return _error(
                 $field,
                 repeatable => 'false',
@@ -91,15 +91,15 @@ sub check_field {
     }
 
     my %errors;
-    if ( $spec->{subfields} ) {
+    if ($spec->{subfields}) {
         my %sfcounter;
-        my ( undef, undef, undef, @subfields ) = @$field;
+        my (undef, undef, undef, @subfields) = @$field;
         while (@subfields) {
-            my ( $code, undef ) = splice @subfields, 0, 2;
+            my ($code, undef) = splice @subfields, 0, 2;
             my $sfspec = $spec->{subfields}->{$code};
 
             if ($sfspec) {
-                if ( defined $sfspec->{repeatable} && $sfcounter{$code}++ ) {
+                if (defined $sfspec->{repeatable} && $sfcounter{$code}++) {
                     $errors{$code} = {
                         message    => qq{subfield '$code' is not repeatable},
                         label      => $sfspec->{label},
@@ -107,13 +107,13 @@ sub check_field {
                     };
                 }
             }
-            elsif ( !$options{ignore_unknown_subfields} ) {
-                $errors{$code} = { message => 'unknown subfield' };
+            elsif (!$options{ignore_unknown_subfields}) {
+                $errors{$code} = {message => 'unknown subfield'};
             }
         }
     }
 
-    return %errors ? _error( $field, subfields => \%errors ) : ();
+    return %errors ? _error($field, subfields => \%errors) : ();
 }
 
 1;

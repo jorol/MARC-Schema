@@ -17,13 +17,14 @@ use MARC::Schema;
 # load inline schema
 {
     my $schema = MARC::Schema->new(
-        {   fields => {
+        {
+            fields => {
                 LDR => {
                     positions =>
-                        [ { position => '00-04', label => 'Record length' } ],
+                        [{position => '00-04', label => 'Record length'}],
                     repeatable => 0,
                 },
-                '001' => { label => 'Control Number', repeatable => 0 }
+                '001' => {label => 'Control Number', repeatable => 0}
             }
         }
     );
@@ -40,17 +41,18 @@ use MARC::Schema;
     my $record = {
         _id    => 'fol05865967',
         record => [
-            [ 'LDR', undef, undef, '_', '00661nam  22002538a 4500' ],
-            [ '001', undef, undef, '_', 'fol05865967' ],
-            [ '001', undef, undef, '_', 'fol05865967' ],
-            [   '245',                                        '1',
+            ['LDR', undef, undef, '_', '00661nam  22002538a 4500'],
+            ['001', undef, undef, '_', 'fol05865967'],
+            ['001', undef, undef, '_', 'fol05865967'],
+            [
+                '245',                                        '1',
                 '0',                                          'a',
                 'Programming Perl /',                         'c',
                 'Larry Wall, Tom Christiansen & Jon Orwant.', 'a',
                 'subfield is not repeatable',                 'x',
                 'unknown subfield',
             ],
-            [ '999', undef, undef, '_', 'not a standard field' ]
+            ['999', undef, undef, '_', 'not a standard field']
         ]
     };
 

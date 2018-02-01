@@ -1,7 +1,8 @@
-/MARC-Schema-*
-/.build
-/_build*
-/Build
-MYMETA.*
 !META.json
+.tidyall.d/
+/.build
 /.prove
+/Build
+/MARC-Schema-*
+/_build*
+MYMETA.*
