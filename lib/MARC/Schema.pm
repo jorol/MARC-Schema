@@ -30,11 +30,11 @@ sub _load_schema {
     my ($self) = shift;
     my $json;
     if ($self->{file}) {
-        $json = read_binary($self->{filename});
+        $json = read_binary($self->{file});
     }
     else {
-        my $filename = dist_file('MARC-Schema', 'marc-schema.json');
-        $json = read_binary($filename);
+        $self->{file} = dist_file('MARC-Schema', 'marc-schema.json');
+        $json = read_binary($self->{file});
     }
     my $schema = decode_json($json);
 
