@@ -29,7 +29,10 @@ MARC::Schema - Specification of the MARC21 format
     
     # load default schema
     my $schema = MARC::Schema->new();
-    my @check = $schema->check($record);
+    
+    # load custom schema from file
+    my $schema = MARC::Schema->new({ file => share/marc-schema.json });
+
 
     # load custom schema
     my $schema = MARC::Schema->new(

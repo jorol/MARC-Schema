@@ -2,6 +2,10 @@ Revision history for MARC-Schema
 
 {{$NEXT}}
 
+0.04  2018-02-02 19:08:41 CET
+  - fix variable name
+  - fix check value bug
+
 0.03  2018-02-01 19:51:54 CET
   - add .travis.yml
   - add Perl::Tidy and Perl::Critic 
