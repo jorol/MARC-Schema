@@ -44,13 +44,17 @@ use MARC::Schema;
             ['LDR', undef, undef, '_', '00661nam  22002538a 4500'],
             ['001', undef, undef, '_', 'fol05865967'],
             ['001', undef, undef, '_', 'fol05865967'],
+            ['016', undef, undef, 'a', '730032015'],
+            ['016', undef, undef, 'a', '84074272XE'],
             [
                 '245',                                        '1',
                 '0',                                          'a',
                 'Programming Perl /',                         'c',
                 'Larry Wall, Tom Christiansen & Jon Orwant.', 'a',
                 'subfield is not repeatable',                 'x',
-                'unknown subfield',
+                'unknown subfield',                           '8',
+                '1',                                          '8',
+                '2',
             ],
             ['999', undef, undef, '_', 'not a standard field']
         ]

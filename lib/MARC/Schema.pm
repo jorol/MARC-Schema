@@ -56,12 +56,7 @@ sub check {
 
 sub _error {
     my $field = shift;
-    return {
-        tag => $field->[0],
-
-        # ($field->[1] ? (occurrence => $field->[1]) : ()),
-        @_
-    };
+    return {tag => $field->[0], @_};
 }
 
 sub check_field {
@@ -78,7 +73,7 @@ sub check_field {
         }
     }
 
-    if ($options{counter} && defined $spec->{repeatable}) {
+    if ($options{counter} && !$spec->{repeatable}) {
         if ($options{counter}{$field->[0]}++) {
             return _error(
                 $field,
@@ -97,7 +92,7 @@ sub check_field {
             my $sfspec = $spec->{subfields}->{$code};
 
             if ($sfspec) {
-                if (defined $sfspec->{repeatable} && $sfcounter{$code}++) {
+                if (!$sfspec->{repeatable} && $sfcounter{$code}++) {
                     $errors{$code} = {
                         message    => qq{subfield '$code' is not repeatable},
                         label      => $sfspec->{label},
@@ -154,7 +149,10 @@ MARC::Schema - Specification of the MARC21 format
     
     # load default schema
     my $schema = MARC::Schema->new();
-    my @check = $schema->check($record);
+    
+    # load custom schema from file
+    my $schema = MARC::Schema->new({ file => share/marc-schema.json });
+
 
     # load custom schema
     my $schema = MARC::Schema->new(
