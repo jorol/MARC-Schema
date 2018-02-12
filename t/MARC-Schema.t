@@ -64,8 +64,8 @@ use MARC::Schema;
     my @check  = $schema->check($record);
     is $check[0]->{message}, 'field is not repeatable',
         'field is not repeatable';
-    is $check[1]->{subfields}->{a}->{message},
-        q{subfield 'a' is not repeatable}, 'subfield is not repeatable';
+    is $check[1]->{subfields}->{a}->{message}, q{subfield is not repeatable},
+        'subfield is not repeatable';
     is $check[1]->{subfields}->{x}->{message}, 'unknown subfield',
         'unknown subfield';
     is $check[2]->{message}, 'unknown field', 'unknown field';

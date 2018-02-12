@@ -94,7 +94,7 @@ sub check_field {
             if ($sfspec) {
                 if (!$sfspec->{repeatable} && $sfcounter{$code}++) {
                     $errors{$code} = {
-                        message    => qq{subfield '$code' is not repeatable},
+                        message    => 'subfield is not repeatable',
                         label      => $sfspec->{label},
                         repeatable => 'false'
                     };
