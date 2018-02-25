@@ -38,11 +38,7 @@ sub _load_schema {
     }
     my $schema = decode_json($json);
 
-    # rename MARC leader according to the Catmandu::MARC specification
-    if (exists $schema->{Leader}) {
-        $schema->{LDR} = delete $schema->{Leader};
-    }
-    return $schema;
+    return $schema->{fields};
 }
 
 sub check {
