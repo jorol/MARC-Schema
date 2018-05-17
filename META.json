@@ -4,7 +4,7 @@
       "Johann Rolschewski <jorol@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Milla version v1.0.17, Dist::Zilla version 6.008, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "Dist::Milla version v1.0.17, Dist::Zilla version 6.008, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -64,16 +64,16 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/jorol/MARC-Schema/issues"
+         "web" : "https://github.com/phochste/MARC-Schema/issues"
       },
-      "homepage" : "https://github.com/jorol/MARC-Schema",
+      "homepage" : "https://github.com/phochste/MARC-Schema",
       "repository" : {
          "type" : "git",
-         "url" : "https://github.com/jorol/MARC-Schema.git",
-         "web" : "https://github.com/jorol/MARC-Schema"
+         "url" : "https://github.com/phochste/MARC-Schema.git",
+         "web" : "https://github.com/phochste/MARC-Schema"
       }
    },
    "version" : "0.05",
-   "x_serialization_backend" : "Cpanel::JSON::XS version 4.00"
+   "x_serialization_backend" : "Cpanel::JSON::XS version 4.02"
 }
 
