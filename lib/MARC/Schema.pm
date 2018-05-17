@@ -142,10 +142,10 @@ MARC::Schema - Specification of the MARC21 format
             [ '999', undef, undef, '_', 'not a standard field']
         ]
     };
-    
+
     # load default schema
     my $schema = MARC::Schema->new();
-    
+
     # load custom schema from file
     my $schema = MARC::Schema->new({ file => share/marc-schema.json });
 
@@ -179,31 +179,31 @@ MARC::Schema defines a set of MARC21 fields and subfields to validate Catmandu::
 For a more detailed description of the (default) schema see L<MARC21 structure in JSON|https://pkiraly.github.io/2018/01/28/marc21-in-json/>.
 
 =head1 METHODS
- 
+
 =head2 check( $record [, %options ] )
- 
+
 Check whether a given L<"Catmandu::Importer::MARC"|Catmandu::Importer::MARC/"EXAMPLE ITEM"> or L<"MARC::Parser::*"|https://metacpan.org/search?q=%22MARC%3A%3AParser%22> record confirms to the schema and return a list of detected violations. Possible options include:
- 
+
 =over
- 
+
 =item ignore_unknown_fields
- 
+
 Don't report fields not included in the schema.
- 
+
 =item ignore_unknown_subfields
- 
+
 Don't report subfields not included in the schema.
- 
+
 =back
- 
-Errors are given as list of hash reference with keys C<label>, C<message>, 
+
+Errors are given as list of hash reference with keys C<label>, C<message>,
 C<repeatable>, C<subfields> and C<tag> of the violated field. If key
-C<subfields> is set, the field contained invalid subfields. The error field 
-C<message> contains a human-readable error message which for each violated 
+C<subfields> is set, the field contained invalid subfields. The error field
+C<message> contains a human-readable error message which for each violated
 field and/or subfield;
- 
+
 =head2 check_field( $field [, %options ] )
- 
+
 Check whether a MARC21 field confirms to the schema. Use same options as method C<check>.
 
 =head1 AUTHOR
