@@ -26,10 +26,10 @@ MARC::Schema - Specification of the MARC21 format
             [ '999', undef, undef, '_', 'not a standard field']
         ]
     };
-    
+
     # load default schema
     my $schema = MARC::Schema->new();
-    
+
     # load custom schema from file
     my $schema = MARC::Schema->new({ file => share/marc-schema.json });
 
@@ -76,10 +76,10 @@ Check whether a given ["Catmandu::Importer::MARC"](https://metacpan.org/pod/Catm
 
     Don't report subfields not included in the schema.
 
-Errors are given as list of hash reference with keys `label`, `message`, 
+Errors are given as list of hash reference with keys `label`, `message`,
 `repeatable`, `subfields` and `tag` of the violated field. If key
-`subfields` is set, the field contained invalid subfields. The error field 
-`message` contains a human-readable error message which for each violated 
+`subfields` is set, the field contained invalid subfields. The error field
+`message` contains a human-readable error message which for each violated
 field and/or subfield;
 
 ## check\_field( $field \[, %options \] )
