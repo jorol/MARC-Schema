@@ -102,6 +102,34 @@ sub check_field {
         }
     }
 
+    if ($spec->{indicator1}) {
+        my (undef, $code, @other) = @$field;
+        $code //= ' ';
+        my $sfspec = $spec->{indicator1}->{codes}->{$code};
+
+        if (defined($sfspec)) {
+
+            # everything is ok
+        }
+        else {
+            $errors{ind1} = {message => "unknown indicator1 value `$code'"};
+        }
+    }
+
+    if ($spec->{indicator2}) {
+        my (undef, undef, $code, @other) = @$field;
+        $code //= ' ';
+        my $sfspec = $spec->{indicator2}->{codes}->{$code};
+
+        if (defined($sfspec)) {
+
+            # everything is ok
+        }
+        else {
+            $errors{ind2} = {message => "unknown indicator2 value `$code'"};
+        }
+    }
+
     return %errors ? _error($field, subfields => \%errors) : ();
 }
 
