@@ -58,6 +58,7 @@ use MARC::Schema;
             ],
             ['999', undef, undef, '_', 'not a standard field'],
             ['130', 'a',   'x',   'a', 'test'],
+            ['240', '1',   'x',   'a', 'test']
         ]
     };
 
@@ -72,7 +73,9 @@ use MARC::Schema;
     is $check[2]->{message}, 'unknown field', 'unknown field';
     is $check[3]->{subfields}->{ind1}->{message},
         'unknown indicator1 value `a\'', 'unknown indicator1 value `a\'';
-    ok @check == 4, 'not more than 4 errors';
+    is $check[4]->{subfields}->{ind2}->{message},
+        'unknown indicator2 value `x\'', 'unknown indicator2 value `x\'';
+    ok @check == 5, 'not more than 5 errors';
 }
 
 done_testing;
