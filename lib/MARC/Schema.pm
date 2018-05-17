@@ -240,6 +240,10 @@ Check whether a MARC21 field confirms to the schema. Use same options as method 
 
 Johann Rolschewski E<lt>jorol@cpan.orgE<gt>
 
+=head1 CONTRIBUTORS
+
+Patrick Hochstenbach E<lt>patrick.hochstenbach@ugent.be<gt>
+
 =head1 COPYRIGHT
 
 Copyright 2018- Johann Rolschewski
