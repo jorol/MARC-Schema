@@ -105,9 +105,10 @@ sub check_field {
     if ($spec->{indicator1}) {
         my (undef, $code, @other) = @$field;
         $code //= ' ';
-        my $sfspec = $spec->{indicator1}->{codes}->{$code};
+        my (@matches)
+            = grep {$code =~ /^[$_]/} keys %{$spec->{indicator1}->{codes}};
 
-        if (defined($sfspec)) {
+        if (@matches > 0) {
 
             # everything is ok
         }
@@ -119,9 +120,10 @@ sub check_field {
     if ($spec->{indicator2}) {
         my (undef, undef, $code, @other) = @$field;
         $code //= ' ';
-        my $sfspec = $spec->{indicator2}->{codes}->{$code};
+        my (@matches)
+            = grep {$code =~ /^[$_]/} keys %{$spec->{indicator2}->{codes}};
 
-        if (defined($sfspec)) {
+        if (@matches > 0) {
 
             # everything is ok
         }
