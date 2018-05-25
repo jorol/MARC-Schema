@@ -9,7 +9,6 @@ use Getopt::Long 'HelpMessage';
 use MARC::Parser::RAW;
 use MARC::Parser::XML;
 use MARC::Schema;
-use DDP;
 
 GetOptions(
     'file|f=s'   => \my $file,
