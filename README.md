@@ -44,7 +44,9 @@ MARC::Schema - Specification of the MARC21 format
     my @check = $schema->check($record);
 
     # via the command line
-    $ marcvalidate --file t/camel.mrc --type RAW
+    $ marcvalidate t/camel.mrc
+    $ marcvalidate --schema marc_schema.json t/camel.mrc
+    $ marcvalidate --type XML marc.xml
 
 # DESCRIPTION
 
@@ -76,11 +78,9 @@ Check whether a given ["Catmandu::Importer::MARC"](https://metacpan.org/pod/Catm
 
     Don't report subfields not included in the schema.
 
-Errors are given as list of hash reference with keys `label`, `message`,
-`repeatable`, `subfields` and `tag` of the violated field. If key
-`subfields` is set, the field contained invalid subfields. The error field
-`message` contains a human-readable error message which for each violated
-field and/or subfield;
+Errors are given as list of hash references with keys `error`, `tag`, 
+`type` and `value` of the violated field. `error` contains a 
+human-readable error message for each violated field and/or subfield.
 
 ## check\_field( $field \[, %options \] )
 
