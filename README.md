@@ -68,7 +68,7 @@ For a more detailed description of the (default) schema see [MARC21 structure in
 
 ## check( $record \[, %options \] )
 
-Check whether a given ["Catmandu::Importer::MARC"](https://metacpan.org/pod/Catmandu::Importer::MARC#EXAMPLE-ITEM) or ["MARC::Parser::\*"](https://metacpan.org/search?q=%22MARC%3A%3AParser%22) record confirms to the schema and return a list of detected violations. Possible options include:
+Check whether a given ["Catmandu::Importer::MARC"](https://metacpan.org/pod/Catmandu%3A%3AImporter%3A%3AMARC#EXAMPLE-ITEM) or ["MARC::Parser::\*"](https://metacpan.org/search?q=%22MARC%3A%3AParser%22) record confirms to the schema and return a list of detected violations. Possible options include:
 
 - ignore\_unknown\_fields
 
@@ -105,14 +105,14 @@ it under the same terms as Perl itself.
 
 # SEE ALSO
 
-[Catmandu::Validator](https://metacpan.org/pod/Catmandu::Validator)
+[Catmandu::Validator](https://metacpan.org/pod/Catmandu%3A%3AValidator)
 
-[JSON::Schema](https://metacpan.org/pod/JSON::Schema)
+[JSON::Schema](https://metacpan.org/pod/JSON%3A%3ASchema)
 
-[PICA::Schema](https://metacpan.org/pod/PICA::Schema)
+[PICA::Schema](https://metacpan.org/pod/PICA%3A%3ASchema)
 
-[MARC::Lint](https://metacpan.org/pod/MARC::Lint)
+[MARC::Lint](https://metacpan.org/pod/MARC%3A%3ALint)
 
 # ACKNOWLEDGEMENT
 
-MARC::Schema uses the MARC21 schema developed by [Péter Király](https://github.com/pkiraly) as default. For more information see ["Metadata assessment for MARC records"](https://github.com/pkiraly/metadata-qa-marc) and ["MARC21 structure in JSON"](https://pkiraly.github.io/2018/01/28/marc21-in-json/).
+MARC::Schema uses the MARC21 schema developed by [P�ter Kir�ly](https://github.com/pkiraly) as default. For more information see ["Metadata assessment for MARC records"](https://github.com/pkiraly/metadata-qa-marc) and ["MARC21 structure in JSON"](https://pkiraly.github.io/2018/01/28/marc21-in-json/).
