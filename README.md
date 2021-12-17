@@ -2,7 +2,6 @@
 
 MARC::Schema - Specification of the MARC21 format
 
-[![Build Status](https://travis-ci.org/jorol/MARC-Schema.png)](https://travis-ci.org/jorol/MARC-Schema)
 [![Linux build status](https://github.com/jorol/MARC-Schema/actions/workflows/linux.yml/badge.svg)](https://github.com/jorol/MARC-Schema/actions/workflows/linux.yml)
 [![Coverage Status](https://coveralls.io/repos/jorol/MARC-Schema/badge.png?branch=master)](https://coveralls.io/r/jorol/MARC-Schema?branch=master)
 [![Kwalitee Score](http://cpants.cpanauthors.org/dist/MARC-Schema.png)](http://cpants.cpanauthors.org/dist/MARC-Schema)
