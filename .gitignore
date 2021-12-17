@@ -1,9 +1,9 @@
 !META.json
-/.tidyall.d
 /.build
+/.pls_cache
 /.prove
+/.tidyall.d
 /Build
 /MARC-Schema-*
 /_build*
 MYMETA.*
-/.pls_cache
