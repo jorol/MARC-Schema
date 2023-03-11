@@ -92,7 +92,9 @@ Johann Rolschewski <jorol@cpan.org>
 
 # CONTRIBUTORS
 
-Patrick Hochstenbach &lt;patrick.hochstenbach@ugent.be&lt;gt>
+Patrick Hochstenbach
+
+Steve Rogerson
 
 # COPYRIGHT
 
