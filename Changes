@@ -2,6 +2,11 @@ Revision history for MARC-Schema
 
 {{$NEXT}}
 
+0.11  2023-03-11 13:44:04 CET
+  - merge pr#8 (Steve Rogerson)
+  - add contributor
+  - fix version for script
+
 0.10  2021-12-17 11:55:13 CET
   - update Avram schema
   - add Github action workflow for Linux

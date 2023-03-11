@@ -92,9 +92,7 @@ Johann Rolschewski <jorol@cpan.org>
 
 # CONTRIBUTORS
 
-Patrick Hochstenbach &lt;patrick.hochstenbach@ugent.be&gt;
-
-Steve Rogerson 
+Patrick Hochstenbach &lt;patrick.hochstenbach@ugent.be&lt;gt>
 
 # COPYRIGHT
 
@@ -117,4 +115,4 @@ it under the same terms as Perl itself.
 
 # ACKNOWLEDGEMENT
 
-MARC::Schema uses the MARC21 schema developed by [Péter Király](https://github.com/pkiraly) as default. For more information see ["Metadata assessment for MARC records"](https://github.com/pkiraly/metadata-qa-marc) and ["MARC21 structure in JSON"](https://pkiraly.github.io/2018/01/28/marc21-in-json/).
+MARC::Schema uses the MARC21 schema developed by [P�ter Kir�ly](https://github.com/pkiraly) as default. For more information see ["Metadata assessment for MARC records"](https://github.com/pkiraly/metadata-qa-marc) and ["MARC21 structure in JSON"](https://pkiraly.github.io/2018/01/28/marc21-in-json/).
